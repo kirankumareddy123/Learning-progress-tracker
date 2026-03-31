@@ -1,5 +1,9 @@
 import { calculateProgress, updateProgressUI } from "./progress.js";
-import { loadTopics, saveTopics, loadPreferences, savePreferences } from "./storage.js";
+import {
+  saveTopics,
+  loadPreferences,
+  savePreferences,
+} from "./storage.js";
 
 let topics = [];
 let activeFilter = "All";
@@ -11,6 +15,7 @@ function generateId() {
 
 export function initUI(initialTopics) {
   topics = [...initialTopics];
+
   const prefs = loadPreferences();
   const allowed = new Set(["light", "dark", "aurora", "sunset"]);
   const themeCandidate = typeof prefs.theme === "string" ? prefs.theme : "light";
@@ -35,7 +40,9 @@ export function initUI(initialTopics) {
 
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       activeFilter = btn.dataset.filter || "All";
       render();

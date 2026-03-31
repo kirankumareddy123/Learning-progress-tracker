@@ -42,7 +42,7 @@
         </div>
       </header>
 
-      <main class="app-main">
+      <main id="appShell" class="app-main">
         <section class="summary-grid" aria-label="Learning summary">
           <article class="summary-card">
             <div class="summary-label">Total Topics</div>
@@ -83,7 +83,11 @@
               <div class="form-row">
                 <label for="topicName">Topic Name</label>
                 <input
-                  type="text" id="topicName" placeholder="Add Learning Topic" required/>
+                  type="text"
+                  id="topicName"
+                  placeholder="Add Learning Topic"
+                  required
+                />
               </div>
 
               <div class="form-grid">
@@ -153,11 +157,7 @@
               <div class="list-header-controls">
                 <div class="search-wrapper">
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search topics by name..."
-                  />
+                  <input type="text" id="searchInput" placeholder="Search topics by name..." />
                 </div>
               </div>
             </div>
@@ -174,8 +174,7 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody id="topicsTbody">
-                </tbody>
+                <tbody id="topicsTbody"></tbody>
               </table>
               <div id="emptyState" class="empty-state">
                 <i class="fa-regular fa-circle-check"></i>
